@@ -2,7 +2,6 @@ package org.id;
 
 import java.util.List;
 
-
 import org.id.dao.ReponseRepository;
 import org.id.entities.Reponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,30 +18,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ReponseRestService {
 	@Autowired
-    ReponseRepository reponseRepository;
+	ReponseRepository reponseRepository;
 
-    @RequestMapping(value = "listreponses")
-    public List<Reponse>  listreponses()
-    {
-        return  reponseRepository.findAll();
-    }
-    @GetMapping(value = "reponses/{id}")
-    public Reponse findReponse(@PathVariable(name = "id") Long id)
-    {
-        return  reponseRepository.findById(id).get();
-    }
+	@RequestMapping(value = "listreponses")
+	public List<Reponse> listreponses() {
+		return reponseRepository.findAll();
+	}
 
-    @PutMapping(value = "reponses/{id}")
-    public Reponse update(@PathVariable(name = "id") Long id,@RequestBody Reponse r)
-    {
-        r.setId(id);
-        return  reponseRepository.save(r);
-    }
+	@GetMapping(value = "reponses/{id}")
+	public Reponse findReponse(@PathVariable(name = "id") Long id) {
+		return reponseRepository.findById(id).get();
+	}
 
-    @DeleteMapping(value = "reponses/{id}")
-    public void delete(@PathVariable(name = "id") Long id)
-    {
-          reponseRepository.deleteById(id);
-    }
-    
+	@PutMapping(value = "reponses/{id}")
+	public Reponse update(@PathVariable(name = "id") Long id, @RequestBody Reponse r) {
+		r.setId(id);
+		return reponseRepository.save(r);
+	}
+
+	@DeleteMapping(value = "reponses/{id}")
+	public void delete(@PathVariable(name = "id") Long id) {
+		reponseRepository.deleteById(id);
+	}
+
 }

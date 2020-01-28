@@ -8,8 +8,8 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 //@Configuration
 public class MyConfig {
 
-   //@Bean
-   public MultipartResolver multipartResolver() {
-      return new CommonsMultipartResolver();
-   }
+	// @Bean
+	public MultipartResolver multipartResolver() {
+		return new CommonsMultipartResolver();
+	}
 }

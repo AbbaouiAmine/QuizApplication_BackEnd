@@ -22,10 +22,10 @@ import lombok.ToString;
 @Data
 @ToString
 public class Question {
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-  private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-  private String imageUrl;
+	private String imageUrl;
 
 }

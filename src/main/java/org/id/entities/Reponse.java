@@ -27,6 +27,5 @@ public class Reponse {
 	private Long id;
 	private String text;
 	private boolean type;
-	
-	
+
 }

@@ -24,5 +24,5 @@ public class Utilisateur {
 	private String login;
 	private String pass;
 	private String name;
-	private String email; 
+	private String email;
 }

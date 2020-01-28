@@ -18,31 +18,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UtilisateurRestService {
 	@Autowired
-    UtilisateurRepository utilisateurRepository;
+	UtilisateurRepository utilisateurRepository;
 
-    @RequestMapping(value = "listutilisateurs")
-    public List<Utilisateur>  listUtilisateurs()
-    {
-        return  utilisateurRepository.findAll();
-    }
+	@RequestMapping(value = "listutilisateurs")
+	public List<Utilisateur> listUtilisateurs() {
+		return utilisateurRepository.findAll();
+	}
 
-    
-    @GetMapping(value = "utilisateurs/{id}")
-    public Utilisateur findUtilisateur(@PathVariable(name = "id") Long id)
-    {
-        return  utilisateurRepository.findById(id).get();
-    }
+	@GetMapping(value = "utilisateurs/{id}")
+	public Utilisateur findUtilisateur(@PathVariable(name = "id") Long id) {
+		return utilisateurRepository.findById(id).get();
+	}
 
-    @PutMapping(value = "utilisateurs/{id}")
-    public Utilisateur update(@PathVariable(name = "id") Long id,@RequestBody Utilisateur q)
-    {
-        q.setId(id);
-        return  utilisateurRepository.save(q);
-    }
+	@PutMapping(value = "utilisateurs/{id}")
+	public Utilisateur update(@PathVariable(name = "id") Long id, @RequestBody Utilisateur q) {
+		q.setId(id);
+		return utilisateurRepository.save(q);
+	}
 
-    @DeleteMapping(value = "Utilisateurs/{id}")
-    public void delete(@PathVariable(name = "id") Long id)
-    {
-          utilisateurRepository.deleteById(id);
-    }
+	@DeleteMapping(value = "Utilisateurs/{id}")
+	public void delete(@PathVariable(name = "id") Long id) {
+		utilisateurRepository.deleteById(id);
+	}
 }
